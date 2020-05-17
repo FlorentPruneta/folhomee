@@ -1,0 +1,28 @@
+{
+  "name": "folhomee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jest": "^26.0.1",
+    "mongodb": "^3.5.7"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-jest": "^26.0.1"
+  },
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlorentPruneta/folhomee.git"
+  },
+  "author": "Florent PRUNETA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlorentPruneta/folhomee/issues"
+  },
+  "homepage": "https://github.com/FlorentPruneta/folhomee#readme"
+}
