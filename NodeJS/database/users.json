@@ -1,0 +1,14 @@
+[
+  {
+    "login": "admin",
+    "password": "leMotDePasseSecur!"
+  },
+  {
+    "login": "florent",
+    "password": "123456789az_"
+  },
+  {
+    "login": "clement",
+    "password": "clement"
+  }
+]
