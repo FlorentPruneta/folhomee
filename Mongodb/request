@@ -1,0 +1,30 @@
+Collection ads suivante:
+
+{ _id: 1, title: 'Appartement 40m2 dans Paris 15', price: 405000, type: 'apartment', assets:['last-floor']  },
+{ _id: 2, title: 'Appartement 54m2 dans Paris 20', price: 399000, type: 'apartment', assets:[]  },
+{ _id: 3, title: 'Maison de campagne', price: 232000, type: 'house', assets:['country-side', 'refresh']  },
+{ _id: 4, title: 'Maison avec piscine', price: 321900, type: 'house', assets:['swimmingpool', 'refresh']  },
+
+1. Obtenir la somme des prix des appartements (pas des maisons)
+
+db.ads.aggregate([
+    { "$match" : { "type": "apartment" }},
+    { "$group": { "_id": null, "sum_prices": { "$sum": "$price" }}}
+])
+
+Retour: { "_id" : null, "sum_prices" : 804000 }
+
+2. Obtenir un tableau contenant la liste des assets sans doublon
+
+db.ads.distinct("assets")
+
+Retour: [ "last-floor", "country-side", "refresh", "swimmingpool" ]
+
+3. Obtenir la liste des annonces qui possèdent le mot "campagne" dans le titre (sans tenir compte de la casse)
+
+db.ads.find({title:{'$regex' : 'Campagne', '$options' : 'i'}})
+db.ads.find({title:{'$regex' : 'campagne', '$options' : 'i'}})
+
+Retour:  { "_id" : 3, "title" : "Maison de campagne", "price" : 232000, "type" : "house", "assets" : [ "country-side", "refresh" ] }
+
+
